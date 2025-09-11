@@ -103,3 +103,38 @@ GRANT SELECT ON b4_kaamgar.slavary to 'sagar';
  GRANT update ON b4_kaamgar.slavary to 'sagar';
 
  revoke update ON b4_kaamgar.slavary from 'sagar';
+
+use b4_kaamgar;
+select * from slavary;
+
+--used to count the entries in table
+select count(*) from slavary;
+
+--to count the how many Business Intelligence are there in department column
+select count(*) from slavary where  department = "Business Intelligence";
+
+--how many employees (or rows) are in departments other than “Data Science” and “Data Engineering”.
+select count(*) from slavary where  department not in ("data science","Data Engineering");
+
+--used to count the how many salaries in table and skips the null values(empty value)
+select count(salary) from slavary;
+
+--used to check sum of salaries in table 
+select sum(salary) from slavary;
+
+--used to find the sum of salaries for specific department" AI Reasearch"
+select sum(salary) "salary of Ai re" from slavary where department not in  ("AI Research","Data Engineering");
+
+--used to find the average salary of Ai research
+select avg(salary) from slavary where department = "AI Research";
+
+--it will find the whoes salary is minimum in analytics department
+select min(salary) from slavary where department = "Analytics";
+
+--it will find the whoes  is maximum in analytics department
+select max(salary) from slsalaryavary where department = "Analytics";
+
+
+
+
+
